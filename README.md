@@ -12,5 +12,5 @@ Uso de async/await para requisições.
 
 - Pesquisa de filmes pelos seus títulos originais, traduzidos e alternativos.
 
-
+o backend é em java com spring nesse repo @https://github.com/lipesc/Java_API_buscar_filmes_tmdb
 
