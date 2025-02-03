@@ -20,5 +20,10 @@ defineProps({
 </template>
 
 <style scoped>
-
+.movie {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: white;
+}
 </style>
