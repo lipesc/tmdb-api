@@ -7,6 +7,8 @@ const currentPage = ref(1);
 const searchResults = ref([]);
 const searchQuery = ref("");
 
+
+// top 10 movies buscar
 const topMovies = async (page) => {
   try {
     const response = await fetch(`/movies/top/${page}`);
@@ -16,6 +18,23 @@ const topMovies = async (page) => {
     console.error("erro ao buscar filmes: ", error);
   }
 }
+
+// pesquisar filme por titulo
+
+const searchMoviesTitle = async (query) => {
+  if (!query) return;
+  try {
+    
+    const response = await fetch(`/movies/search/${query}`);
+    const data = await response.json();
+    searchResults.value = data.results;
+
+  } catch (error) {
+    console.log("erro ao buscas o filmes: ", error);
+    
+  }
+};
+
 
 </script>
 
