@@ -35,6 +35,18 @@ const searchMoviesTitle = async (query) => {
   }
 };
 
+// montagem para carregar filmes
+watchEffect(() => {
+  topMovies(currentPage.value);
+});
+
+// monitorar input de buscar
+
+watchEffect(() => {
+  if (searchMoviesTitle.value.trim()) {
+    searchMoviesTitle(searchQuery.value);
+  }
+});
 
 </script>
 
