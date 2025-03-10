@@ -11,7 +11,7 @@ const searchQuery = ref("");
 // top 10 movies buscar
 const topMovies = async (page) => {
   try {
-    const response = await fetch(`/movies/top/${page}`);
+    const response = await fetch(`http://localhost:8080/movies/top/${page}`);
     const data = await response.json();
     movies.value = data.results;
   } catch (error) {
@@ -25,7 +25,7 @@ const searchMoviesTitle = async (query) => {
   if (!query) return;
   try {
     
-    const response = await fetch(`/movies/search/${query}`);
+    const response = await fetch(`http://localhost:8080/movies/search/${query}`);
     const data = await response.json();
     searchResults.value = data.results;
 
@@ -43,7 +43,7 @@ watchEffect(() => {
 // monitorar input de buscar
 
 watchEffect(() => {
-  if (searchMoviesTitle.value.trim()) {
+  if (searchQuery.value.trim()) {
     searchMoviesTitle(searchQuery.value);
   }
 });
@@ -56,7 +56,7 @@ watchEffect(() => {
   <div class="logo">
     <img alt="logo" height="30" src="./assets/icons8-github-64.png" width="30"/>
     <span>
-      <a href="https://github.com/lipesc" target="_blank">github lipesc</a>
+      <a href="https://github.com/lipesc" target="_blank">lipesc</a>
     </span>
   </div>
 
@@ -65,7 +65,7 @@ watchEffect(() => {
   </div>
 </div>
 
-  <h1>procurar filmes</h1>
+  <h1>Filmes tmdb</h1>
 
   <div id="search-movies-container">
     <div v-if="searchResults.length">
@@ -85,11 +85,5 @@ watchEffect(() => {
 
 <style>
 
-  body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: darkgray;
-  }
 
 </style>
