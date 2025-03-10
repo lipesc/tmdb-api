@@ -80,9 +80,16 @@ watchEffect(() => {
 
   <button @click="currentPage++">Proxima pagina</button>
 
-  
+
 </template>
 
-<style scoped>
+<style>
+
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: darkgray;
+  }
 
 </style>
