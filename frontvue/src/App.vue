@@ -52,7 +52,35 @@ watchEffect(() => {
 
 <template>
   
+<div class="header">
+  <div class="logo">
+    <img alt="logo" height="30" src="./assets/icons8-github-64.png" width="30"/>
+    <span>
+      <a href="https://github.com/lipesc" target="_blank">github lipesc</a>
+    </span>
+  </div>
 
+  <div class="search-container">
+    <input type="text" v-model="searchQuery" placeholder="Pesquisar filme" />
+  </div>
+</div>
+
+  <h1>procurar filmes</h1>
+
+  <div id="search-movies-container">
+    <div v-if="searchResults.length">
+      <h3>filmes encontrados</h3>
+      <MovieList :movies="searchResults"/>
+    </div>
+  </div>
+
+
+  <h3>Top filmes de hoje</h3>
+  <MovieList :movies="movies"/>
+
+  <button @click="currentPage++">Proxima pagina</button>
+
+  
 </template>
 
 <style scoped>
