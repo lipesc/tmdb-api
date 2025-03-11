@@ -10,3 +10,10 @@ v-model para capturar o valor da busca, async/await para requisições.
 
 o backend é em java com spring nesse repo @https://github.com/lipesc/Java_API_buscar_filmes_tmdb
 
+
+interface update homepage:
+![image](https://github.com/user-attachments/assets/6baec062-b7c6-48b1-9896-f73359565a2b)
+
+interface pesquisando um titulo:
+![image](https://github.com/user-attachments/assets/df8a4e27-166e-41e6-ae38-dee1c95b443d)
+
